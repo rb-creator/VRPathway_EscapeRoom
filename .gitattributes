@@ -1,2 +1,12 @@
-# Auto detect text files and perform LF normalization
+# Ensure text files are normalized (LF in the repository, CRLF or LF in the working directory depending on the OS)
 * text=auto
+
+# Handle line endings for specific file types
+*.sh text eol=lf       # Shell scripts should always use LF
+*.bat text eol=crlf     # Batch scripts should always use CRLF
+*.txt text              # Normalize text files (auto detect)
+
+# Optionally, add rules for other specific file types:
+*.cs text eol=lf        # C# files (or any source code) should use LF in the repo
+*.js text eol=lf        # JavaScript files should use LF in the repo
+*.java text eol=lf      # Java files should use LF in the repo
